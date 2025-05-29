@@ -1,4 +1,6 @@
 # DevTinder
-- create a vit + react Application
-- Remove unnecessory code and create a Hello world app
-- install tailwind Css
+- create a vit + react Application.
+- Remove unnecessory code and create a Hello world app.
+- install tailwind Css.
+- install Daisy UI.
+- Add Navbar component to App.jsx.
