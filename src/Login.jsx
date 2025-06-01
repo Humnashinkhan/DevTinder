@@ -1,12 +1,30 @@
 import { useState } from "react";
-
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addUser } from "./utils/userSlice";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [emailId, setEmailId] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
-
-  }
+    try {
+      const res = await axios.post(
+        "",
+        {
+          emailId,
+          password,
+        },
+        { withCredentials: true }
+      );
+      dispatch(addUser(res.data));
+       navigate("/");
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <div className="flex justify-center my-10">
@@ -38,7 +56,9 @@ const Login = () => {
             </label>
           </div>
           <div className="card-actions justify-center">
-            <button className="btn btn-primary" onClick={handleLogin}>Login</button>
+            <button className="btn btn-primary" onClick={handleLogin}>
+              Login
+            </button>
           </div>
         </div>
       </div>
