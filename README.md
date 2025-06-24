@@ -16,7 +16,10 @@
 
 - Install redux toolkit + react redux => Configure  redux store => provide redux store to the App => create Slice =>  add reducers to store.
 - Navbar should update as soon as your usr logs in.
-- 
+- you should not be access other routes without login.
+- If token is not present redirect user to login page.
+- Logout. created.
+- Profile Page.
 
 
 
