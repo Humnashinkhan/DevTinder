@@ -20,6 +20,8 @@
 - If token is not present redirect user to login page.
 - Logout. created.
 - Profile Page.
+- get the feed and add the feed in the store.
+- Build the user card on feed.
 
 
 
