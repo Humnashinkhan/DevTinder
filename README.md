@@ -22,6 +22,9 @@
 - Profile Page.
 - get the feed and add the feed in the store.
 - Build the user card on feed.
+- Edit profile feature.
+- See Toast message on save the profile.
+- See all my Connection.
 
 
 
