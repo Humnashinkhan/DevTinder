@@ -25,6 +25,8 @@
 - Edit profile feature.
 - See Toast message on save the profile.
 - See all my Connection.
+- Create a page to see all my connection requests.
+- 
 
 
 

@@ -35,7 +35,7 @@ const NavBar = () => {
               className="btn btn-ghost btn-circle avatar"
             >
               <div className="w-10 rounded-full">
-                <img alt="user photo" src={user.photoURL} />
+                <img alt="user photo" src={user.photoUrl} />
               </div>
             </div>
             <ul
@@ -50,6 +50,9 @@ const NavBar = () => {
               </li>
               <li>
                 <Link to="/connections">Connections</Link>
+              </li>
+               <li>
+                <Link to="/requests">Requests</Link>
               </li>
               <li>
                 <a onClick={handleLogout}>Logout</a>
