@@ -26,7 +26,15 @@
 - See Toast message on save the profile.
 - See all my Connection.
 - Create a page to see all my connection requests.
-- 
+- I have created a feature to accept / reject connection requests.
+
+
+# Remaining Topic
+
+- send / ignore connection requests.
+- Signup new user.
+- E2E testing.
+
 
 
 

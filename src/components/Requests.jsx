@@ -1,14 +1,25 @@
-import axios from 'axios';
-import React, { useEffect } from 'react'
-import { BASE_URL } from '../utils/constants';
+import axios from "axios";
+import React, { useEffect } from "react";
+import { BASE_URL } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
-import { addRequests } from "../utils/requestSlice";
+import { addRequests, removeRequest } from "../utils/requestSlice";
 const Requests = () => {
   const requests = useSelector((store) => store.requests);
   const dispatch = useDispatch();
 
-
-const fetchRequests = async () => {
+  const reviewRequest = async (status, _id) => {
+    try {
+      const res = axios.post(
+        BASE_URL + "/request/review/" + status + "/" + _id,
+        {},
+        { withCredentials: true }
+      );
+      dispatch(removeRequest(_id));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const fetchRequests = async () => {
     try {
       const res = await axios.get(BASE_URL + "/user/request/received", {
         withCredentials: true,
@@ -16,7 +27,7 @@ const fetchRequests = async () => {
 
       dispatch(addRequests(res.data.data));
     } catch (err) {
-        console.log(err);
+      console.log(err);
     }
   };
 
@@ -29,9 +40,8 @@ const fetchRequests = async () => {
   if (requests.length === 0)
     return <h1 className="flex justify-center my-10"> No Requests Found</h1>;
 
-
   return (
-     <div className="text-center my-10">
+    <div className="text-center my-10">
       <h1 className="text-bold text-3xl">Connection Requests</h1>
 
       {requests.map((request) => {
@@ -60,11 +70,13 @@ const fetchRequests = async () => {
             <div>
               <button
                 className="btn btn-primary mx-2"
+                onClick={() => reviewRequest("rejected", request._id)}
               >
                 Reject
               </button>
               <button
                 className="btn btn-secondary mx-2"
+                onClick={() => reviewRequest("accepted", request._id)}
               >
                 Accept
               </button>
@@ -73,7 +85,7 @@ const fetchRequests = async () => {
         );
       })}
     </div>
-  )
-}
+  );
+};
 
-export default Requests
+export default Requests;
