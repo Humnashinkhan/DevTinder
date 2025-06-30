@@ -31,7 +31,6 @@
 
 # Remaining Topic
 
-- send / ignore connection requests.
 - Signup new user.
 - E2E testing.
 
