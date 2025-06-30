@@ -27,10 +27,6 @@
 - See all my Connection.
 - Create a page to see all my connection requests.
 - I have created a feature to accept / reject connection requests.
-
-
-# Remaining Topic
-
 - Signup new user.
 - E2E testing.
 
