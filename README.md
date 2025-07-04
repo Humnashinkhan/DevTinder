@@ -30,6 +30,20 @@
 - Signup new user.
 - E2E testing.
 
+# Deployment
+- Signup on AWS.
+- Launch Instance.
+- chmod 400 <secret>.pen
+- ssh -i 
+- Install node version.
+- Git clone.
+- Frontend
+    - npm install - install all the dependenct.
+    - npm run build.
+    - sudo apt update.
+    - sudo apt install nginx.
+    - sudo systemctl start nginx.
+    - sudo systemctl enable nginx.
 
 
 
